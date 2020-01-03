@@ -9,9 +9,10 @@ function Project({
   title,
   color,
   link,
-  bigletter
+  bigletter,
+  setModaleImg
 }) {
-  const pos = bigletter;
+  const pos = bigletter !== undefined ? bigletter : -1;
 
   return (
     <div
@@ -33,6 +34,14 @@ function Project({
       <a className={show ? "visit in" : "visit out"} href={link}>
         visit
       </a>
+      <div
+        className={show ? "bigger in" : "bigger out"}
+        onClick={() => {
+          setModaleImg(gif);
+        }}
+      >
+        big
+      </div>
 
       <Fade show={show}>
         <img src={gif} alt="gif" />

@@ -1,3 +1,5 @@
+/* # # # # # # # # # RESET # # # # # # # # #  */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +11,14 @@
   cursor: default;
 }
 
+/* # # # # # # # # # MAIN PAGE # # # # # # # # #  */
+
 .app {
-  /* position: relative; */
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fbf2ec;
-  /* opacity: 0.8; */
 }
 
 .header {
@@ -25,12 +27,22 @@
   margin-top: 20px;
   letter-spacing: 6px;
 }
+/* LE BOUTON */
+.app > img {
+  height: 35px;
+  width: 35px;
+  object-fit: cover;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+}
 .subtitle {
   letter-spacing: 12px;
   font-size: 20px;
   color: rgba(89, 87, 87, 0.872);
   margin: 15px 0 15px 0;
 }
+/* Line of 3 */
 .projectscontenair {
   display: flex;
   justify-content: center;
@@ -107,7 +119,7 @@
   font-weight: bold;
 }
 
-/* # # # # # # # # # IMG + VISIT # # # # # # # # #  */
+/* # # # # # # # # # IMG de la Carte  # # # # # # # # #  */
 
 .fade {
   position: absolute;
@@ -124,21 +136,26 @@
   border-radius: 5px;
 }
 
-.visit {
-  position: absolute;
-  font-size: 15px;
-  padding: 2px;
-  top: 0;
-  z-index: 10;
-  right: 0;
-  border-radius: 5px;
-  margin: 4px;
-  border: solid 1px;
-  transition: all 0.4s ease;
-  background-color: white;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-/* # # # # # # # # # DESCRIPTION # # # # # # # # #  */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* # # # # # # # # # DESCRIPTION+VISIT+BIGGER # # # # # # # # #  */
 
 .description {
   position: absolute;
@@ -163,32 +180,62 @@
 .description::-webkit-scrollbar {
   display: none;
 }
+
+.visit {
+  position: absolute;
+  font-size: 15px;
+  padding: 2px;
+  top: 0;
+  z-index: 10;
+  right: 0;
+  border-radius: 5px;
+  margin: 4px;
+  border: solid 1px;
+  transition: all 0.4s ease;
+  background-color: white;
+}
+.bigger {
+  position: absolute;
+  font-size: 15px;
+  padding: 2px;
+  top: 20%;
+  z-index: 10;
+  right: 0;
+  border-radius: 5px;
+  margin: 4px;
+  border: solid 1px;
+  transition: all 0.4s ease;
+  background-color: white;
+}
+
 .in {
   transition-delay: 1s;
 }
 
 .out {
   transform: translate(200px);
-  /* display: none; */
 }
 
-/* # # # # # # # # # ANIMATIONS # # # # # # # # #  */
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+/* # # # # # # # # # MODALE IMG # # # # # # # # #  */
+.gridprojects {
+  /* background-color: red; */
+  position: relative;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+.modaleimg > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.99;
+  z-index: 1000;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  animation: modale 1s;
+}
+@keyframes modale {
+  from {
+    transform: scale(0);
   }
 }

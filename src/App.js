@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Project from "./components/Project.js";
 import cartes from "./Cartes.js";
+import sortProjects from "./components/SortLetters.js";
+import Button from "./assets/button.png";
 
 function App() {
+  // const wordsList = ["malleret", "demos", "xxxx"];
+  const wordsList = [
+    "malleret",
+    "react",
+    "frontend",
+    "fullstack",
+    "r.native",
+    "dev"
+  ];
   const [carts, setCarts] = useState([
     false,
     false,
@@ -15,7 +26,26 @@ function App() {
     false,
     false
   ]);
+  const [wordNum, setWordNum] = useState(-1);
+  const [projetsList, setProjectList] = useState(cartes);
+  const [modaleImg, setModaleImg] = useState(null);
 
+  //pick a word from the list
+  const pickAWord = () => {
+    let num = wordNum;
+    // while (num === wordNum) {
+    //   num = Math.floor(Math.random() * wordsList.length);
+    // }
+    if (num === wordsList.length - 1) {
+      num = 0;
+    } else {
+      num++;
+    }
+    setWordNum(num);
+    setProjectList(sortProjects(wordsList[num], cartes));
+  };
+
+  //open one card
   const setACart = num => {
     const newValue = !carts[num];
     let arr = [];
@@ -27,103 +57,53 @@ function App() {
     setCarts(arr);
   };
 
-  /* # # # # # # TRI DES OBJETS # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-  }
-
-  const findaword = (word, tabIn) => {
-    //tableau de sortie avec 'pos du mot dans tab, pos de la lettre'
-    let outtab = [];
-    let tab = [...tabIn];
-    // boucle sur les lettres a chercher
-    for (let i = 0; i < word.length; i++) {
-      //boucle sur les mots qu'on a dispo
-      for (let j = 0; j < tab.length; j++) {
-        //si on a trouvé la lettre dans le mot courant
-        if (tab[j].title.toLowerCase().indexOf(word[i]) !== -1) {
-          tab[j].bigletter = tab[j].title.toLowerCase().indexOf(word[i]);
-          outtab.push(tab[j]);
-          tab.splice(j, 1);
-          break;
-        }
-        //si on arrive au bout sans trouver de lettre
-        if (j === tab.length - 1) {
-          return word[i];
-        }
-      }
-    }
-    //ici on a bien trouvé les lettres
-    //completer le tableau de sortie avec les mots non utilisés
-    tab.map(el => {
-      el.bigletter = -1;
-      outtab.push(el);
-    });
-    return outtab;
-  };
-
-  const findawordplus = word => {
-    let tab = [...cartes];
-    let currResult = findaword(word, tab);
-    let occurence = 0;
-
-    while (currResult.length === 1 && occurence < 50) {
-      occurence++;
-      // tab.unshift(tab.pop());
-      shuffleArray(tab);
-      currResult = findaword(word, tab);
-      console.log(currResult);
-    }
-
-    return currResult;
-  };
-
-  let projetsList = findawordplus("fullstack");
-  console.log("liste projets", projetsList);
-  if (projetsList.length === 1) {
-    console.log("pas trouve");
-    projetsList = cartes;
-    projetsList.map(proj => {
-      proj.bigletter = -1;
-    });
-  }
-
   /* # # # # # # APP # # # # # # # # # # # # # # # # # # # # # # # # # # */
 
   return (
     <div className="app">
       <div className="header">Pierre Malleret</div>
+      <img src={Button} alt="button" onClick={pickAWord} />
       <div className="subtitle">Selected projects</div>
-      {[0, 1, 2].map(num => {
-        return (
-          <div className="projectscontenair" key={num * 10}>
-            {projetsList.slice(num * 3, num * 3 + 3).map((projet, index) => {
-              return (
-                <Project
-                  key={num * 3 + index}
-                  gif={projet.gif}
-                  description={projet.description}
-                  title={projet.title}
-                  color={projet.color}
-                  link={projet.link}
-                  show={carts[num * 3 + index]}
-                  setCarts={() => {
-                    setACart(num * 3 + index);
-                  }}
-                  bigletter={projet.bigletter}
-                />
-              );
-            })}
-            {/* end of contenair of 3 */}
+      <div className="gridprojects">
+        {modaleImg && (
+          <div className="modaleimg">
+            <img
+              src={modaleImg}
+              alt="video"
+              onClick={() => {
+                setModaleImg(null);
+              }}
+            />
           </div>
-        );
-      })}
+        )}
+        {[0, 1, 2].map(num => {
+          return (
+            <div className="projectscontenair" key={num * 10}>
+              {projetsList.slice(num * 3, num * 3 + 3).map((projet, index) => {
+                return (
+                  <Project
+                    key={num * 3 + index}
+                    gif={projet.gif}
+                    description={projet.description}
+                    title={projet.title}
+                    color={projet.color}
+                    link={projet.link}
+                    show={carts[num * 3 + index]}
+                    setCarts={() => {
+                      setACart(num * 3 + index);
+                    }}
+                    bigletter={projet.bigletter}
+                    setModaleImg={setModaleImg}
+                  />
+                );
+              })}
+              {/* end of contenair of 3 */}
+            </div>
+          );
+        })}
+        {/* end of gridProject */}
+      </div>
+      {/* end of APp */}
     </div>
   );
 }

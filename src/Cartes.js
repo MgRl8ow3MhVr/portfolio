@@ -49,7 +49,7 @@ const obj5 = {
 /* # # # # # # LEBONCOIN # # # # # # # # # # # # # # # */
 const obj6 = {
   title: "Leboncoin",
-  gif: imggif,
+  gif: leboncoin,
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
   link: "https://leboncoinfullstack.netlify.com/"
