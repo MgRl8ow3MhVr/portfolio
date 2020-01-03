@@ -1,18 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Project from "./components/Project.js";
-import Background from "./assets/background.jpg";
-
-// GIF IMPORTS
-import imggif from "./assets/imgtest.gif";
-import github from "./assets/github.gif";
-import cv from "./assets/cv.gif";
-import meilleurtaux from "./assets/meilleurtaux.gif";
-import leboncoin from "./assets/leboncoin.gif";
-
-//DESCRIPTIONS
-const description1 =
-  "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun";
+import cartes from "./Cartes.js";
 
 function App() {
   const [carts, setCarts] = useState([
@@ -38,126 +27,103 @@ function App() {
     setCarts(arr);
   };
 
+  /* # # # # # # TRI DES OBJETS # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
+
+  const findaword = (word, tabIn) => {
+    //tableau de sortie avec 'pos du mot dans tab, pos de la lettre'
+    let outtab = [];
+    let tab = [...tabIn];
+    // boucle sur les lettres a chercher
+    for (let i = 0; i < word.length; i++) {
+      //boucle sur les mots qu'on a dispo
+      for (let j = 0; j < tab.length; j++) {
+        //si on a trouvé la lettre dans le mot courant
+        if (tab[j].title.toLowerCase().indexOf(word[i]) !== -1) {
+          tab[j].bigletter = tab[j].title.toLowerCase().indexOf(word[i]);
+          outtab.push(tab[j]);
+          tab.splice(j, 1);
+          break;
+        }
+        //si on arrive au bout sans trouver de lettre
+        if (j === tab.length - 1) {
+          return word[i];
+        }
+      }
+    }
+    //ici on a bien trouvé les lettres
+    //completer le tableau de sortie avec les mots non utilisés
+    tab.map(el => {
+      el.bigletter = -1;
+      outtab.push(el);
+    });
+    return outtab;
+  };
+
+  const findawordplus = word => {
+    let tab = [...cartes];
+    let currResult = findaword(word, tab);
+    let occurence = 0;
+
+    while (currResult.length === 1 && occurence < 50) {
+      occurence++;
+      // tab.unshift(tab.pop());
+      shuffleArray(tab);
+      currResult = findaword(word, tab);
+      console.log(currResult);
+    }
+
+    return currResult;
+  };
+
+  let projetsList = findawordplus("fullstack");
+  console.log("liste projets", projetsList);
+  if (projetsList.length === 1) {
+    console.log("pas trouve");
+    projetsList = cartes;
+    projetsList.map(proj => {
+      proj.bigletter = -1;
+    });
+  }
+
+  /* # # # # # # APP # # # # # # # # # # # # # # # # # # # # # # # # # # */
+
   return (
     <div className="app">
       <div className="header">Pierre Malleret</div>
-      <div className="subtitle">About me</div>
-
-      <div className="projectscontenair">
-        {/* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */}
-        <Project
-          gif={imggif}
-          description={description1}
-          show={carts[1]}
-          setCarts={() => {
-            setACart(1);
-          }}
-          title="About Me"
-          color="#D8B4A0"
-        />
-        {/* # # # # # # DOWNLOAD CV # # # # # # # # # # # # # # # */}
-        <Project
-          gif={cv}
-          description={description1}
-          show={carts[0]}
-          setCarts={() => {
-            setACart(0);
-          }}
-          title="Download my CV"
-          color="#D8B4A0"
-        />
-
-        {/* # # # # # # GITHUB # # # # # # # # # # # # # # # */}
-        <Project
-          gif={github}
-          description={description1}
-          show={carts[2]}
-          setCarts={() => {
-            setACart(2);
-          }}
-          title="Check my Github"
-          color="#D8B4A0"
-        />
-      </div>
-      <div className="subtitle">Selected Projects</div>
-      <div className="projectscontenair">
-        {/* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */}
-
-        <Project
-          gif={meilleurtaux}
-          description={description1}
-          show={carts[3]}
-          setCarts={() => {
-            setACart(3);
-          }}
-          title="MeilleurTaux.com"
-          link="https://meilleurtauxpierre.netlify.com/"
-        />
-
-        {/* # # # # # # LEBONCOIN # # # # # # # # # # # # # # # */}
-
-        <Project
-          gif={leboncoin}
-          description={description1}
-          show={carts[4]}
-          setCarts={() => {
-            setACart(4);
-          }}
-          title="Leboncoin"
-          link="https://leboncoinfullstack.netlify.com/"
-        />
-
-        {/* # # # # # # ??? # # # # # # # # # # # # # # # */}
-
-        <Project
-          gif={imggif}
-          description={description1}
-          show={carts[5]}
-          setCarts={() => {
-            setACart(5);
-          }}
-          title="Giant Tic Tac Toe"
-        />
-      </div>
-      <div className="projectscontenair">
-        {/* # # # # # # ??? # # # # # # # # # # # # # # # */}
-
-        <Project
-          gif={meilleurtaux}
-          description={description1}
-          show={carts[6]}
-          setCarts={() => {
-            setACart(6);
-          }}
-          title="AirBnB"
-          link="https://meilleurtauxpierre.netlify.com/"
-        />
-
-        {/* # # # # # # ??? # # # # # # # # # # # # # # # */}
-
-        <Project
-          gif={leboncoin}
-          description={description1}
-          show={carts[7]}
-          setCarts={() => {
-            setACart(7);
-          }}
-          title="LefrancManger"
-          link="https://leboncoinfullstack.netlify.com/"
-        />
-
-        {/* # # # # # # DEVIVEROO # # # # # # # # # # # # # # # */}
-
-        <Project
-          gif={imggif}
-          description={description1}
-          show={carts[8]}
-          setCarts={() => {
-            setACart(8);
-          }}
-          title="Deliveroo"
-        />
-      </div>
+      <div className="subtitle">Selected projects</div>
+      {[0, 1, 2].map(num => {
+        return (
+          <div className="projectscontenair" key={num * 10}>
+            {projetsList.slice(num * 3, num * 3 + 3).map((projet, index) => {
+              return (
+                <Project
+                  key={num * 3 + index}
+                  gif={projet.gif}
+                  description={projet.description}
+                  title={projet.title}
+                  color={projet.color}
+                  link={projet.link}
+                  show={carts[num * 3 + index]}
+                  setCarts={() => {
+                    setACart(num * 3 + index);
+                  }}
+                  bigletter={projet.bigletter}
+                />
+              );
+            })}
+            {/* end of contenair of 3 */}
+          </div>
+        );
+      })}
     </div>
   );
 }

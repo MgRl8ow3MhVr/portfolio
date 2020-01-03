@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Fade from "./Fade.js";
 
-function Project({ gif, description, show, setCarts, title, color, link }) {
-  useEffect(() => {
-    if (!show) {
-      setPos(2 + Math.floor(Math.random() * (title.length - 3)));
-    }
-  }, [show]);
-  const [pos, setPos] = useState(
-    2 + Math.floor(Math.random() * (title.length - 3))
-  );
+function Project({
+  gif,
+  description,
+  show,
+  setCarts,
+  title,
+  color,
+  link,
+  bigletter
+}) {
+  const pos = bigletter;
 
   return (
     <div
@@ -20,9 +22,9 @@ function Project({ gif, description, show, setCarts, title, color, link }) {
       style={color && { backgroundColor: color }}
     >
       <div className={show ? "titlesin" : "titlesout"}>
-        <div className={show ? "t2h" : "t2"}>{title.substring(0, pos - 1)}</div>
-        <div className={show ? "t1h" : "t1"}>{title.charAt(pos - 1)}</div>
-        <div className={show ? "t2h" : "t2"}>{title.substring(pos)}</div>
+        <div className={show ? "t2h" : "t2"}>{title.substring(0, pos)}</div>
+        <div className={show ? "t1h" : "t1"}>{title.charAt(pos)}</div>
+        <div className={show ? "t2h" : "t2"}>{title.substring(pos + 1)}</div>
       </div>
 
       <div className={show ? "description in" : "description out"}>

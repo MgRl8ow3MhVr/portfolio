@@ -23,13 +23,13 @@
   font-size: 40px;
   color: rgba(46, 46, 46, 0.872);
   margin-top: 20px;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
 }
 .subtitle {
-  letter-spacing: 10px;
+  letter-spacing: 12px;
   font-size: 20px;
   color: rgba(89, 87, 87, 0.872);
-  margin-top: 15px;
+  margin: 15px 0 15px 0;
 }
 .projectscontenair {
   display: flex;
