@@ -4,6 +4,7 @@ import Project from "./components/Project.js";
 import cartes from "./Cartes.js";
 import sortProjects from "./components/SortLetters.js";
 import Button from "./assets/button.png";
+import RefreshCw from "./components/Button";
 
 function App() {
   // const wordsList = ["malleret", "demos", "xxxx"];
@@ -61,9 +62,17 @@ function App() {
 
   return (
     <div className="app">
-      <div className="header">Pierre Malleret</div>
-      <img src={Button} alt="button" onClick={pickAWord} />
-      <div className="subtitle">Selected projects</div>
+      <div className="header">PIERRE MALLERET</div>
+      {/* <img src={Button} alt="button"  /> */}
+      <div className="subtitle">
+        <span>SELECTED PROJECTS</span>
+        <div onClick={pickAWord}>
+          {/* <span>try</span> */}
+          <RefreshCw />
+          {/* <span>me</span> */}
+        </div>
+      </div>
+
       <div className="gridprojects">
         {modaleImg && (
           <div className="modaleimg">

@@ -4,14 +4,17 @@ import github from "./assets/github.gif";
 import cv from "./assets/cv.gif";
 import meilleurtaux from "./assets/meilleurtaux.gif";
 import leboncoin from "./assets/leboncoin.gif";
+import francmanger from "./assets/francmanger.gif";
+import deliveroo from "./assets/deliveroo.gif";
+import airbnb from "./assets/airbnb.gif";
 
 /* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
 const obj1 = {
   title: "About Me",
   gif: imggif,
   description:
-    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
-  color: "#D8B4A0"
+    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
+  // color: "#D8B4A0"
 };
 /* # # # # # # DOWNLOAD CV # # # # # # # # # # # # # # # */
 const obj2 = {
@@ -19,7 +22,8 @@ const obj2 = {
   gif: cv,
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
-  color: "#D8B4A0"
+  // color: "#D8B4A0",
+  link: "./CVDevPierre2020.pdf"
 };
 
 /* # # # # # # GITHUB # # # # # # # # # # # # # # # */
@@ -27,8 +31,8 @@ const obj3 = {
   title: "Check my Github",
   gif: github,
   description:
-    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
-  color: "#D8B4A0"
+    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
+  // color: "#D8B4A0"
 };
 /* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
 const obj4 = {
@@ -57,21 +61,21 @@ const obj6 = {
 /* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
 const obj7 = {
   title: "Le Franc Manger",
-  gif: imggif,
+  gif: francmanger,
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
 };
 /* # # # # # # AirBnB # # # # # # # # # # # # # # # */
 const obj8 = {
   title: "Airbnb",
-  gif: imggif,
+  gif: airbnb,
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
 };
 /* # # # # # # DEliveroo # # # # # # # # # # # # # # # */
 const obj9 = {
   title: "Deliveroo",
-  gif: imggif,
+  gif: deliveroo,
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
 };
