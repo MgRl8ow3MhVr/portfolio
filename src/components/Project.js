@@ -3,22 +3,34 @@ import Fade from "./Fade.js";
 
 function Project({
   gif,
-  description,
   show,
   setCarts,
   title,
   color,
-  link,
   bigletter,
-  setModaleImg
+  setModaleNum,
+  index
 }) {
   const pos = bigletter !== undefined ? bigletter : -1;
-
+  const emptyBoard = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
   return (
     <div
       className="cart"
-      onClick={() => {
+      onMouseEnter={() => {
         setCarts();
+      }}
+      onMouseLeave={() => {
+        setCarts(emptyBoard);
       }}
       style={color && { backgroundColor: color }}
     >
@@ -28,23 +40,14 @@ function Project({
         <div className={show ? "t2h" : "t2"}>{title.substring(pos + 1)}</div>
       </div>
 
-      <div className={show ? "description in" : "description out"}>
-        <p>{description}</p>
-      </div>
-      <a className={show ? "visit in" : "visit out"} href={link}>
-        visit
-      </a>
-      <div
-        className={show ? "bigger in" : "bigger out"}
-        onClick={() => {
-          setModaleImg(gif);
-        }}
-      >
-        big
-      </div>
-
       <Fade show={show}>
-        <img src={gif} alt="gif" />
+        <img
+          src={gif}
+          alt="gif"
+          onClick={() => {
+            setModaleNum(index);
+          }}
+        />
       </Fade>
     </div>
   );

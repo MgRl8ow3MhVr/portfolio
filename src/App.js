@@ -3,8 +3,9 @@ import "./App.css";
 import Project from "./components/Project.js";
 import cartes from "./Cartes.js";
 import sortProjects from "./components/SortLetters.js";
-import Button from "./assets/button.png";
-import RefreshCw from "./components/Button";
+// import Button from "./assets/button.png";
+import Button from "./components/Button";
+import Description from "./components/Description";
 
 function App() {
   // const wordsList = ["malleret", "demos", "xxxx"];
@@ -29,14 +30,11 @@ function App() {
   ]);
   const [wordNum, setWordNum] = useState(-1);
   const [projetsList, setProjectList] = useState(cartes);
-  const [modaleImg, setModaleImg] = useState(null);
+  const [modaleNum, setModaleNum] = useState(null);
 
   //pick a word from the list
   const pickAWord = () => {
     let num = wordNum;
-    // while (num === wordNum) {
-    //   num = Math.floor(Math.random() * wordsList.length);
-    // }
     if (num === wordsList.length - 1) {
       num = 0;
     } else {
@@ -59,30 +57,50 @@ function App() {
   };
 
   /* # # # # # # APP # # # # # # # # # # # # # # # # # # # # # # # # # # */
-
   return (
-    <div className="app">
+    <div
+      className="app"
+      onClick={() => {
+        setModaleNum(null);
+      }}
+    >
       <div className="header">PIERRE MALLERET</div>
-      {/* <img src={Button} alt="button"  /> */}
       <div className="subtitle">
         <span>SELECTED PROJECTS</span>
         <div onClick={pickAWord}>
-          {/* <span>try</span> */}
-          <RefreshCw />
-          {/* <span>me</span> */}
+          <Button />
         </div>
       </div>
 
-      <div className="gridprojects">
-        {modaleImg && (
-          <div className="modaleimg">
+      <div
+        className="gridprojects"
+        onClick={event => {
+          event.stopPropagation();
+          // setModaleNum(null);
+        }}
+      >
+        {/* MODAL TO WATCH ONE */}
+        {modaleNum !== null && (
+          <div className="modale">
+            {/* this div to set a background gradient */}
+            <div className="gradient"></div>
+            <div className="gradientbas"></div>
             <img
-              src={modaleImg}
-              alt="video"
-              onClick={() => {
-                setModaleImg(null);
-              }}
+              src={
+                projetsList[modaleNum].img
+                  ? projetsList[modaleNum].img
+                  : projetsList[modaleNum].gif
+              }
+              alt="img"
             />
+            <div className="description">
+              <br />
+              <br />
+              <Description text={projetsList[modaleNum].description} />
+            </div>
+            {/* <a className="visit" href={projetsList[modaleNum].link}>
+              visit
+            </a> */}
           </div>
         )}
         {[0, 1, 2].map(num => {
@@ -102,7 +120,8 @@ function App() {
                       setACart(num * 3 + index);
                     }}
                     bigletter={projet.bigletter}
-                    setModaleImg={setModaleImg}
+                    setModaleNum={setModaleNum}
+                    index={num * 3 + index}
                   />
                 );
               })}

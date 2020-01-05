@@ -7,9 +7,7 @@
   text-decoration: none;
   color: black;
 }
-*:hover {
-  cursor: default;
-}
+
 body {
   overflow: scroll;
   background-color: #fbf2ec;
@@ -46,20 +44,33 @@ body {
   font-size: 10px;
 }
 
+/* BUTTON */
 .subtitle svg {
-  animation: turn 8s infinite ease;
-  transition: all 1s ease;
+  transition: all 0.1s ease;
   margin-top: 15px;
+  border: solid 1px rgb(198, 198, 198);
+  border-radius: 4px;
+}
+.subtitle svg:hover {
+  /* transform: rotate(360deg); */
+  cursor: pointer;
+  animation: turn 3s infinite ease;
 }
 .subtitle svg:active {
   transform: scale(0.8);
 }
 @keyframes turn {
-  97% {
-    transform: rotate(0deg);
+  0% {
+    transform: translateY(2px);
   }
-  100% {
-    transform: rotate(180deg);
+  3% {
+    transform: translateY(0px);
+  }
+  6% {
+    transform: translateY(2px);
+  }
+  9% {
+    transform: translateY(0px);
   }
 }
 
@@ -80,14 +91,11 @@ body {
   /* Style */
   height: 190px;
   width: 190px;
-  /* border: solid 1px; */
-  /* background-color: #212121; */
   background-color: #303030;
   margin: 3px;
   overflow: hidden;
-  /* box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.33); */
 }
-.cart:active {
+.cart:hover {
   cursor: pointer;
 }
 
@@ -95,18 +103,25 @@ body {
 .titlesout {
   display: flex;
   flex-direction: column;
-  transition: all 0.3s linear;
-  /* transition-delay: 0.5s; */
+  transition: all 0.3s ease;
 }
 .titlesin {
-  transform: translate(-14px, -55px);
-  width: 75%;
+  /* transform: translate(-14px, -55px); */
+  width: 100%;
+  margin-bottom: 50px;
+  /* height: 30%; */
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
   display: flex;
-  flex-direction: column;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    /* rgba(0, 0, 0, 0), */ rgba(0, 0, 0, 0)
+  );
   /* background-color: black; */
-  opacity: 0.5;
 }
 
 .t1 {
@@ -116,8 +131,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   /* font-weight: bold; */
-
-  /* transition-delay: 0.5s; */
 }
 .t2 {
   color: white;
@@ -125,23 +138,19 @@ body {
   transition: all 0.3s ease;
   text-align: center;
   font-weight: bold;
-
-  /* transition-delay: 0.5s; */
 }
 .t1h {
-  color: black;
-
-  z-index: 100;
+  color: white;
   transition: all 0.3s ease;
-  font-size: 12px;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
 }
 .t2h {
-  color: black;
-  z-index: 100;
-  font-size: 13px;
+  color: white;
+  font-size: 20px;
   transition: all 0.3s linear;
+  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -158,8 +167,6 @@ body {
   width: 100%;
   object-fit: cover;
   position: absolute;
-  /* opacity: 0.5; */
-  border-radius: 5px;
 }
 
 @keyframes fadeIn {
@@ -181,30 +188,92 @@ body {
   }
 }
 
-/* # # # # # # # # # DESCRIPTION+VISIT+BIGGER # # # # # # # # #  */
+/* # # # # # # # # # # # MODALE # # # # # # # # # # # # # # # # #  */
+
+/* This represents the 3x3 grid start */
+.gridprojects {
+  position: relative;
+}
+
+/* inside the modale. absolute position to gridprojects */
+.modale {
+  animation: modale 1s;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+}
+
+.modale > img {
+  z-index: 90;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.98;
+  object-fit: contain;
+  /* background-color: #fbf2ec; */
+  left: 0;
+  top: 0;
+}
+/* set a gradient */
+.gradient {
+  position: absolute;
+  top: 0;
+  height: 65%;
+  width: 100%;
+  z-index: 100;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  /* border: solid red 1px; */
+}
+
+.gradientbas {
+  position: absolute;
+  bottom: 15%;
+  height: 20%;
+  width: 100%;
+  z-index: 110;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  /* border: solid 1px; */
+  opacity: 0.9;
+}
 
 .description {
   position: absolute;
   bottom: 0;
-  border-top: solid 1px;
-  opacity: 0.9;
-  height: 40%;
-  /* margin: 0 5px 0 0; */
-  font-size: 10px;
-  z-index: 10;
-  text-align: justify;
-  overflow: scroll;
-  transition: all 0.4s ease;
-  background-color: white;
-}
-.description p {
-  /* color: white; */
-  font-weight: bold;
+  padding: 20px;
+  z-index: 100;
+  height: 28%;
 
-  padding: 2px;
+  /* border: solid 1px blue; */
+  background-color: white;
+  opacity: 0.9;
+  overflow: scroll;
 }
+
 .description::-webkit-scrollbar {
   display: none;
+}
+
+.description p {
+  font-family: "Hind Siliguri", sans-serif;
+  text-align: justify;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0 5px 0;
 }
 
 .visit {
@@ -220,49 +289,13 @@ body {
   transition: all 0.4s ease;
   background-color: white;
 }
-.bigger {
-  position: absolute;
-  font-size: 15px;
-  padding: 2px;
-  top: 20%;
-  z-index: 10;
-  right: 0;
-  border-radius: 5px;
-  margin: 4px;
-  border: solid 1px;
-  transition: all 0.4s ease;
-  background-color: white;
-}
-
-.in {
-  transition-delay: 1s;
-}
-
-.out {
-  transform: translate(200px);
-}
-
-/* # # # # # # # # # MODALE IMG # # # # # # # # #  */
-.gridprojects {
-  /* background-color: red; */
-  position: relative;
-}
-
-.modaleimg > img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.98;
-  z-index: 1000;
-  object-fit: cover;
-  left: 0;
-  top: 0;
-  animation: modale 1s;
-}
 @keyframes modale {
   from {
     transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
   }
 }
 
@@ -285,5 +318,25 @@ body {
     /* background-color: red; */
     letter-spacing: 8px;
     font-size: 15px;
+  }
+
+  .t1 {
+    font-size: 50px;
+    /* transition: all 0.3s linear;
+    text-align: center;
+    text-transform: uppercase; */
+  }
+  .t2 {
+    color: white;
+    font-size: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+  }
+  .t1h {
+    font-size: 13px;
+  }
+  .t2h {
+    font-size: 13px;
   }
 }
