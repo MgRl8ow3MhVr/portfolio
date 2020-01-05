@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-![](./assets/cv.gif)
+![Demo test gif](src/assets/cv.gif)
 
 In the project directory, you can run:
 
