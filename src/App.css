@@ -219,7 +219,7 @@ body {
 .gradient {
   position: absolute;
   top: 0;
-  height: 65%;
+  height: 70%;
   width: 100%;
   z-index: 100;
   background-image: linear-gradient(
@@ -227,24 +227,25 @@ body {
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.9)
   );
   /* border: solid red 1px; */
 }
 
 .gradientbas {
   position: absolute;
-  bottom: 15%;
-  height: 20%;
+  bottom: 22%;
+  height: 9%;
   width: 100%;
   z-index: 110;
   background-image: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0)
   );
   /* border: solid 1px; */
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .description {
@@ -252,8 +253,7 @@ body {
   bottom: 0;
   padding: 20px;
   z-index: 100;
-  height: 28%;
-
+  height: 24%;
   /* border: solid 1px blue; */
   background-color: white;
   opacity: 0.9;

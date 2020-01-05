@@ -19,9 +19,19 @@ const obj1 = {
   title: "About Me",
   gif: cv_Gif,
 
-  description:
-    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
-  // color: "#D8B4A0"
+  description: `
+>Description
+\nThis is a copy of french CraigList. This is a fullstack project with back-end running on HeroKu. Feel free to post your own fake products.
+\n>Feel Free to create your own posts:
+\n- Consult other people posts, filter by name
+\n- Create an account with a secured password
+\n- Login
+\n- Create a post under your own login, upload multiple photos with drag and drop
+Technical:
+Front end is made with React. After you authentify, a Cookie will save the infos so you don't need to authent again
+The BackEnd is made with javascript / express
+The authentification is made with a salt/hash algorithm
+The photos are hosted on Cloudinary service`
 };
 /* # # # # # # DOWNLOAD CV # # # # # # # # # # # # # # # */
 const obj2 = {
@@ -36,9 +46,19 @@ const obj2 = {
 const obj3 = {
   title: "Check my Github",
   gif: github,
-  description:
-    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
-  // color: "#D8B4A0"
+  description: `
+>Description
+\nThis is a copy of french CraigList. This is a fullstack project with back-end running on HeroKu. Feel free to post your own fake products.
+\n>Feel Free to create your own posts:
+\n- Consult other people posts, filter by name
+\n- Create an account with a secured password
+\n- Login
+\n- Create a post under your own login, upload multiple photos with drag and drop
+Technical:
+Front end is made with React. After you authentify, a Cookie will save the infos so you don't need to authent again
+The BackEnd is made with javascript / express
+The authentification is made with a salt/hash algorithm
+The photos are hosted on Cloudinary service`
 };
 /* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
 const obj4 = {

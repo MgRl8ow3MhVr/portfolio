@@ -95,7 +95,6 @@ function App() {
             />
             <div className="description">
               <br />
-              <br />
               <Description text={projetsList[modaleNum].description} />
             </div>
             {/* <a className="visit" href={projetsList[modaleNum].link}>
