@@ -3,19 +3,18 @@ import "./App.css";
 import Project from "./components/Project.js";
 import cartes from "./Cartes.js";
 import sortProjects from "./components/SortLetters.js";
-// import Button from "./assets/button.png";
 import Button from "./components/Button";
-import Description from "./components/Description";
+import Modale from "./components/Modale";
 
 function App() {
   // const wordsList = ["malleret", "demos", "xxxx"];
   const wordsList = [
-    "malleret",
-    "react",
-    "frontend",
-    "fullstack",
-    "r.native",
-    "dev"
+    // "malleret",
+    // "react",
+    // "frontend",
+    // "fullstack",
+    // "r.native",
+    "malleret"
   ];
   const [carts, setCarts] = useState([
     false,
@@ -43,6 +42,10 @@ function App() {
     setWordNum(num);
     setProjectList(sortProjects(wordsList[num], cartes));
   };
+  //and use it with first word of the list
+  useEffect(() => {
+    pickAWord(wordNum);
+  }, []);
 
   //open one card
   const setACart = num => {
@@ -80,28 +83,7 @@ function App() {
         }}
       >
         {/* MODAL TO WATCH ONE */}
-        {modaleNum !== null && (
-          <div className="modale">
-            {/* this div to set a background gradient */}
-            <div className="gradient"></div>
-            <div className="gradientbas"></div>
-            <img
-              src={
-                projetsList[modaleNum].img
-                  ? projetsList[modaleNum].img
-                  : projetsList[modaleNum].gif
-              }
-              alt="img"
-            />
-            <div className="description">
-              <br />
-              <Description text={projetsList[modaleNum].description} />
-            </div>
-            {/* <a className="visit" href={projetsList[modaleNum].link}>
-              visit
-            </a> */}
-          </div>
-        )}
+        {modaleNum !== null && <Modale project={projetsList[modaleNum]} />}
         {[0, 1, 2].map(num => {
           return (
             <div className="projectscontenair" key={num * 10}>

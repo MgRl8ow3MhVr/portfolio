@@ -1,15 +1,18 @@
 import React from "react";
 
 // GIF IMPORTS
-import imggif from "./assets/imgtest.gif";
 import github from "./assets/github.gif";
 import cv_Gif from "./assets/cv.gif";
-import cv_Img from "./assets/cv.png";
-import meilleurtaux from "./assets/meilleurtaux.gif";
+import cv_Img from "./assets/cv.jpg";
+import cycling_Gif from "./assets/cycling.gif";
+import cycling_Img from "./assets/cycling.jpg";
+import question_Gif from "./assets/question.gif";
+import question_Img from "./assets/question.gif";
+import MT_Gif from "./assets/MT.gif";
+import MT_Img from "./assets/MT.png";
 import leboncoin_Gif from "./assets/leboncoin.gif";
 import leboncoin_Img from "./assets/leboncoin.png";
 import francmanger from "./assets/francmanger.gif";
-import deliveroo from "./assets/deliveroo.gif";
 import airbnb from "./assets/airbnb.gif";
 
 // IMAGES IMPORTS
@@ -18,59 +21,63 @@ import airbnb from "./assets/airbnb.gif";
 const obj1 = {
   title: "About Me",
   gif: cv_Gif,
-
-  description: `
->Description
-\nThis is a copy of french CraigList. This is a fullstack project with back-end running on HeroKu. Feel free to post your own fake products.
-\n>Feel Free to create your own posts:
-\n- Consult other people posts, filter by name
-\n- Create an account with a secured password
-\n- Login
-\n- Create a post under your own login, upload multiple photos with drag and drop
-Technical:
-Front end is made with React. After you authentify, a Cookie will save the infos so you don't need to authent again
-The BackEnd is made with javascript / express
-The authentification is made with a salt/hash algorithm
-The photos are hosted on Cloudinary service`
-};
-/* # # # # # # DOWNLOAD CV # # # # # # # # # # # # # # # */
-const obj2 = {
-  title: "Download my CV",
-  gif: cv_Gif,
   img: cv_Img,
-  description: JSON.stringify("<h1>yrdy</h1>"),
-  link: "./CVDevPierre2020.pdf"
+
+  description: `
+Hello,
+\n My name is Pierre. I’m a Paris based full stack software engineer, always open to new projects propositions !
+\n I graduaded from a computer science and telecom school and recently updated my knowledges at Le Reacteur, a Javascript/React bootcamp based in Paris .
+\n I enjoy developing frontend as well as back end, as long as there is problems to resolve, ideas to find, visuals to create, and I continue to learn
+\n
+\n Feel free to ask me any questions, or ask for my CV.
+`,
+  button1: "Email me",
+  link1: "mailto:7anudq2a3mvjkc7j@gmail.com",
+  button2: "Check my Github",
+  link2: "https://github.com/MgRl8ow3MhVr"
+};
+/* # # # # # # CYCLING AROUND # # # # # # # # # # # # # # # */
+const obj2 = {
+  title: "When I don't code",
+  gif: cycling_Gif,
+  img: cycling_Img,
+  description: `
+    When I'm not coding, you might see me on a bicycle or composing music!
+    \n>Travels
+    
+    \nIn 2012 I discovered the world on a 16.000km bicycle journey from Paris to Australia. Later I kept going with two other travels on two wheels. 
+    \n>Music
+    I am a pianist, guitarist and I compose atmospheric electronic music.
+    `,
+  button1: "More travels",
+  link1: "www.pierrequiroulevoyages.com",
+  button2: "More music",
+  link2: "https://soundcloud.com/map_composer"
 };
 
-/* # # # # # # GITHUB # # # # # # # # # # # # # # # */
+/* # # # # # # YOUR PROJECT # # # # # # # # # # # # # # # */
 const obj3 = {
-  title: "Check my Github",
-  gif: github,
+  title: "Your project !",
+  gif: question_Gif,
+  img: question_Gif,
   description: `
->Description
-\nThis is a copy of french CraigList. This is a fullstack project with back-end running on HeroKu. Feel free to post your own fake products.
-\n>Feel Free to create your own posts:
-\n- Consult other people posts, filter by name
-\n- Create an account with a secured password
-\n- Login
-\n- Create a post under your own login, upload multiple photos with drag and drop
-Technical:
-Front end is made with React. After you authentify, a Cookie will save the infos so you don't need to authent again
-The BackEnd is made with javascript / express
-The authentification is made with a salt/hash algorithm
-The photos are hosted on Cloudinary service`
+There is one more cart left for the next project we'll work on together!`
 };
 /* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
 const obj4 = {
   title: "MeilleurTaux.com",
-  gif: meilleurtaux,
+  gif: MT_Gif,
+  img: MT_Img,
   description:
-    "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
-  link: "https://meilleurtauxpierre.netlify.com/"
+    "Simulation of a bank credit form, copy of www.meilleurtaux.com Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
+  button1: "Visit it",
+  link1: "https://meilleurtauxpierre.netlify.com/",
+  button2: "Github Repo",
+  link2: "https://github.com/MgRl8ow3MhVr/meilleurtaux"
 };
 /* # # # # # # TICTACTOE # # # # # # # # # # # # # # # */
 const obj5 = {
-  title: "Giant Tic Tac Toes",
+  title: "Giant Tic Tac Toe",
   gif: leboncoin_Gif,
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun",
@@ -78,23 +85,22 @@ const obj5 = {
 };
 /* # # # # # # LEBONCOIN # # # # # # # # # # # # # # # */
 const obj6 = {
-  title: "Leboncoin",
+  title: "Leboncoin.com",
   gif: leboncoin_Gif,
   img: leboncoin_Img,
   description: `
->Description
-\nThis is a copy of french CraigList. This is a fullstack project with back-end running on HeroKu. Feel free to post your own fake products.
-\n>Feel Free to create your own posts:
-\n- Consult other people posts, filter by name
-\n- Create an account with a secured password
-\n- Login
-\n- Create a post under your own login, upload multiple photos with drag and drop
-Technical:
+This is a demo copy of french CraigList. Feel free to SignUp and post your own fake products.
+\n>Fonctionalites:
+\nConsult posts, filter by name, secure signup, secure login, create a post, upload multiple photos
+\n>Technos inside:
 Front end is made with React. After you authentify, a Cookie will save the infos so you don't need to authent again
 The BackEnd is made with javascript / express
 The authentification is made with a salt/hash algorithm
 The photos are hosted on Cloudinary service`,
-  link: "https://leboncoinfullstack.netlify.com/"
+  link1: "https://leboncoinfullstack.netlify.com/",
+  button1: "Github repo",
+  link2: "https://leboncoinfullstack.netlify.com/",
+  button2: "Check it out live"
 };
 /* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
 const obj7 = {
@@ -110,10 +116,9 @@ const obj8 = {
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
 };
-/* # # # # # # DEliveroo # # # # # # # # # # # # # # # */
+/* # # # # # # THIS WEBSITE # # # # # # # # # # # # # # # */
 const obj9 = {
-  title: "Deliveroo",
-  gif: deliveroo,
+  title: "This website",
   description:
     "Simulation of a bank credit. Conservation of data if the user leaves the page through a cookie. Technologies used: React, Node.js, Javascript, backend, mailgun"
 };
