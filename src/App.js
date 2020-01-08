@@ -7,14 +7,16 @@ import Button from "./components/Button";
 import Modale from "./components/Modale";
 
 function App() {
-  // const wordsList = ["malleret", "demos", "xxxx"];
+  // const wordsList = ["back", ".js", "r.native"", "front"];
   const wordsList = [
-    // "malleret",
-    // "react",
-    // "frontend",
-    // "fullstack",
-    // "r.native",
-    "malleret"
+    "malleret",
+    "pierre",
+    "fullstack",
+    "react",
+    "algo",
+    "front",
+    "html",
+    ".js"
   ];
   const [carts, setCarts] = useState([
     false,
