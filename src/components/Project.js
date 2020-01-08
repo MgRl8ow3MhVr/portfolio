@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Fade from "./Fade.js";
 
 function Project({
@@ -11,6 +11,10 @@ function Project({
   setModaleNum,
   index
 }) {
+  useEffect(() => {
+    new Image().src = gif;
+  }, []);
+
   const pos = bigletter !== undefined ? bigletter : -1;
   const emptyBoard = [
     false,

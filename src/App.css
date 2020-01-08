@@ -235,7 +235,8 @@ body {
 /* Actual text whith huge margin Top */
 .description > div {
   position: relative;
-  background-color: white;
+  /* background-color: rgb(228, 228, 228); */
+  background-color: #f4f4f4;
   opacity: 0.92;
   padding: 5px 20px 0px 20px;
   margin-top: 89%;
@@ -253,6 +254,7 @@ body {
 /* Writting inside description */
 .description p {
   font-family: "Hind Siliguri", sans-serif;
+
   /* text-align: justify; */
   margin-bottom: 12px;
   font-size: 16px;

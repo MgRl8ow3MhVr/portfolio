@@ -1,5 +1,3 @@
-import React from "react";
-
 // GIF IMPORTS
 import github from "./assets/github.gif";
 import cv_Gif from "./assets/cv.gif";
@@ -16,8 +14,11 @@ import TTT_Img from "./assets/TTT.png";
 import TTT_Gif from "./assets/TTT.gif";
 
 import francmanger from "./assets/francmanger.gif";
-
 import airbnb from "./assets/airbnb.gif";
+const demo_gif_cloud =
+  "https://res.cloudinary.com/pierredev/image/upload/v1578521386/rmpptxutnpeebjupjfb7.gif";
+const demo_mp4_cloud =
+  "https://res.cloudinary.com/pierredev/video/upload/v1578521391/vouqvkioznsil1gckvbm.mp4";
 
 // IMAGES IMPORTS
 
@@ -27,9 +28,7 @@ const obj1 = {
   gif: cv_Gif,
   img: cv_Img,
 
-  description: `
-Hello,
-\n My name is Pierre. I’m a Paris based full stack software engineer. I'm always open to new projects propositions !
+  description: `Hello, my name is Pierre. I’m a Paris based full stack software engineer. I'm always open to new projects propositions !
 \n I graduaded from a computer science and telecom school and very recently updated my knowledges at Le Reacteur, a fullstack Node.js/React bootcamp based in Paris.
 \n I enjoy developing front-end as well as back-end, as long as there is problems to solve, ideas to find, and anything new to learn.
 \n
@@ -46,8 +45,7 @@ const obj2 = {
   title: "My other life",
   gif: cycling_Gif,
   img: cycling_Img,
-  description: `
-    When I'm not coding, you might see Ableton Live open on my mac, and if not behind my computer you might see me cycling on a lost road.
+  description: `When I'm not coding, you might see Ableton Live open on my mac, and if not behind my computer you might see me cycling on a lost road.
     \n>Travels
     \nIn 2012 I discovered the world on a 16.000km bicycle journey from Paris to Australia. I kept going later with two other travels on two wheels in Morocco and South America. 
     \n>Music
@@ -64,16 +62,15 @@ const obj3 = {
   title: "Your project !",
   gif: question_Gif,
   img: question_Gif,
-  description: `
-Here stands our next project together!`
+  description: `There is one cart left for a project together. Don't hesitate to contact me to tell me more about it.
+    `
 };
 /* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
 const obj4 = {
   title: "MeilleurTaux.com",
   gif: MT_Gif,
   img: MT_Img,
-  description: `
-    This is a fullstack simplified version of www.meilleurtaux.com, a french website that gives you quotes for loans.
+  description: `This is a fullstack simplified version of www.meilleurtaux.com, a french website that gives you quotes for loans.
 A cookie and a React state help you save the datas you entered even if you close the tab. You will automatically come back to where you left the form.
 
 I added a few sounds for the fun, and a back-office with a very ... "modern" design with a random color generator ;)
@@ -110,8 +107,7 @@ const obj6 = {
   title: "Leboncoin.com",
   gif: leboncoin_Gif,
   img: leboncoin_Img,
-  description: `
-This is a demo copy of french CraigList. Feel free to SignUp and post your own fake products.
+  description: `This is a demo copy of french CraigList. Feel free to SignUp and post your own fake products.
 \n>features:
 \nConsult posts, filter by name, secure signup, secure login, create a post, upload multiple photos
 \n>technologies:
@@ -120,9 +116,9 @@ The BackEnd is made with javascript / express
 The authentification is made with a salt/hash algorithm
 The photos are hosted on Cloudinary service`,
   link1: "https://leboncoinfullstack.netlify.com/",
-  button1: "Github repo",
+  button1: "Check it out live",
   link2: "https://leboncoinfullstack.netlify.com/",
-  button2: "Check it out live"
+  button2: "Github repo"
 };
 /* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
 const obj7 = {
@@ -143,13 +139,21 @@ const obj8 = {
     \n>features
     login, signup with profile photo upload, consultation of the places around, map view. 
     \n>technologies
-    \n Made with React Native`
+    \n Made with React Native`,
+  link2: "https://github.com/MgRl8ow3MhVr/airbnbReactNative",
+  button2: "Github repo"
 };
 /* # # # # # # THIS WEBSITE # # # # # # # # # # # # # # # */
 const obj9 = {
   title: "this.website",
   description:
-    "I hope you enjoyed this website experience ! Home made with React/html/css."
+    "I hope you enjoyed this website experience ! It was home made with react/html/css",
+  gif: demo_gif_cloud,
+  // img: demo_mp4_cloud,
+  link2: "https://pierredev.netlify.com/",
+  button2: "recursive visit",
+  link2: "https://github.com/MgRl8ow3MhVr/portfolio",
+  button2: "Github repo"
 };
 
 export default [obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9];
