@@ -1,5 +1,4 @@
 // GIF IMPORTS
-import github from "./assets/github.gif";
 import cv_Gif from "./assets/cv.gif";
 import cv_Img from "./assets/cv.jpg";
 import cycling_Gif from "./assets/cycling.gif";
@@ -12,13 +11,11 @@ import leboncoin_Img from "./assets/leboncoin.png";
 import leboncoin_Gif from "./assets/leboncoin.gif";
 import TTT_Img from "./assets/TTT.png";
 import TTT_Gif from "./assets/TTT.gif";
+import thiswebsite_Gif from "./assets/thiswebsite.gif";
+import thiswebsite_Img from "./assets/thiswebsite.png";
 
 import francmanger from "./assets/francmanger.gif";
 import airbnb from "./assets/airbnb.gif";
-const demo_gif_cloud =
-  "https://res.cloudinary.com/pierredev/image/upload/v1578521386/rmpptxutnpeebjupjfb7.gif";
-const demo_mp4_cloud =
-  "https://res.cloudinary.com/pierredev/video/upload/v1578521391/vouqvkioznsil1gckvbm.mp4";
 
 // IMAGES IMPORTS
 
@@ -148,7 +145,8 @@ const obj9 = {
   title: "this.website",
   description:
     "I hope you enjoyed this website experience ! It was home made with react/html/css",
-  gif: demo_gif_cloud,
+  gif: thiswebsite_Gif,
+  img: thiswebsite_Img,
   // img: demo_mp4_cloud,
   link2: "https://pierredev.netlify.com/",
   button2: "recursive visit",

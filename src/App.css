@@ -23,7 +23,7 @@ body {
 }
 
 .header {
-  font-size: 50px;
+  font-size: 40px;
   color: rgba(46, 46, 46, 0.872);
   margin-top: 20px;
   letter-spacing: 10px;
@@ -37,7 +37,7 @@ body {
 }
 .subtitle > span {
   letter-spacing: 12px;
-  font-size: 30px;
+  font-size: 25px;
   color: rgba(89, 87, 87, 0.872);
 }
 
@@ -51,6 +51,7 @@ body {
   margin-top: 15px;
   border: solid 1px rgb(198, 198, 198);
   border-radius: 3px;
+  padding: 4px;
 }
 .subtitle svg:hover {
   /* transform: rotate(360deg); */
@@ -90,8 +91,8 @@ body {
   justify-content: center;
   align-items: center;
   /* Style */
-  height: 190px;
-  width: 190px;
+  height: 175px;
+  width: 175px;
 
   /* background-color: #303030; */
   background-color: #303030;

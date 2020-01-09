@@ -3,7 +3,7 @@ import "./App.css";
 import Project from "./components/Project.js";
 import cartes from "./Cartes.js";
 import sortProjects from "./components/SortLetters.js";
-import Button from "./components/Button";
+import Reload from "./components/Reload";
 import Modale from "./components/Modale";
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
       <div className="subtitle">
         <span>SELECTED PROJECTS</span>
         <div onClick={pickAWord}>
-          <Button />
+          <Reload />
         </div>
       </div>
 
