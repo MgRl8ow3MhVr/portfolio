@@ -12,7 +12,8 @@ function Project({
   index
 }) {
   useEffect(() => {
-    new Image().src = gif;
+    const img = document.createElement("img");
+    img.src = gif;
   }, []);
 
   const pos = bigletter !== undefined ? bigletter : -1;
