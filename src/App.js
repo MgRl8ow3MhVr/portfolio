@@ -5,6 +5,7 @@ import cartes from "./Cartes.js";
 import sortProjects from "./components/SortLetters.js";
 import Reload from "./components/Reload";
 import Modale from "./components/Modale";
+import dice from "./assets/dice.png";
 
 function App() {
   // const wordsList = ["back", ".js", "r.native"", "front"];
@@ -73,7 +74,8 @@ function App() {
       <div className="subtitle">
         <span>SELECTED PROJECTS</span>
         <div onClick={pickAWord}>
-          <Reload />
+          {/* <Reload /> */}
+          <img src={dice} alt="dice" />
         </div>
       </div>
 

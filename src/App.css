@@ -30,7 +30,7 @@ body {
 }
 
 .subtitle {
-  margin: 15px 0 15px 0;
+  margin: 15px 0 0px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +52,26 @@ body {
   border: solid 1px rgb(198, 198, 198);
   border-radius: 3px;
   padding: 4px;
+  background-color: #d8b4a0;
+}
+.subtitle img {
+  margin: 10px 0 10px 0;
+  width: 40px;
+  transition: all 0.1s;
+  border-radius: 20px;
+  animation: turn 2s infinite ease;
+  border: solid 1px;
+
+  box-shadow: 7px 10px 9px -6px rgba(0, 0, 0, 0.75);
+}
+.subtitle img:active {
+  transform: scale(0.9);
+}
+
+.subtitle img:hover {
+  /* transform: rotate(360deg); */
+  cursor: pointer;
+  /* animation: turn 3s infinite ease; */
 }
 .subtitle svg:hover {
   /* transform: rotate(360deg); */
@@ -172,8 +192,9 @@ body {
 .fade img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   position: absolute;
+  background-color: white;
 }
 
 @keyframes fadeIn {
