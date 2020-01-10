@@ -9,6 +9,7 @@ const Modale = ({ project }) => {
       <img src={project.img ? project.img : project.gif} alt="img" />
       <div className="description">
         <div>
+          <span>Scroll</span>
           <Button />
           <div>
             <Description text={project.description} />

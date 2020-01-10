@@ -6,7 +6,7 @@ import MT_Gif from "./assets/MT.gif";
 import TTT_Gif from "./assets/TTT.gif";
 import leboncoin_Gif from "./assets/leboncoin.gif";
 import francmanger_Img from "./assets/francmanger.jpg";
-import airbnb_Img from "./assets/francmanger.jpg";
+import airbnb_Img from "./assets/airbnb.jpg";
 import thiswebsite_Gif from "./assets/thiswebsite.gif";
 
 // Modales IMPORTS
@@ -132,7 +132,7 @@ const obj7 = {
 };
 /* # # # # # # AirBnB # # # # # # # # # # # # # # # */
 const obj8 = {
-  title: "Airbnb",
+  title: "Airbnb s",
   gif: airbnb_Img,
   img: airbnb_Gif,
   description: `This is a simplified version of the Airbnb app
@@ -145,7 +145,7 @@ const obj8 = {
 };
 /* # # # # # # THIS WEBSITE # # # # # # # # # # # # # # # */
 const obj9 = {
-  title: "this.website",
+  title: "this.website d",
   description:
     "I hope you enjoyed this website experience ! It was home made with react/html/css",
   gif: thiswebsite_Gif,

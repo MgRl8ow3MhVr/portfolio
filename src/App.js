@@ -6,19 +6,21 @@ import sortProjects from "./components/SortLetters.js";
 import Reload from "./components/Reload";
 import Modale from "./components/Modale";
 import dice from "./assets/dice.png";
+import click from "./assets/click.png";
 
 function App() {
-  // const wordsList = ["back", ".js", "r.native"", "front"];
-  const wordsList = [
-    "malleret",
-    "pierre",
-    "fullstack",
-    "react",
-    "algo",
-    "front",
-    "html",
-    ".js"
-  ];
+  // const wordsList = ["back", ".js", "r.native"", "front","express"];
+  const wordsList = ["frontend", "mongo.db", "express", "algorithm"];
+  // const wordsList = [
+  //   "malleret",
+  //   "pierre",
+  //   "fullstack",
+  //   "react",
+  //   "algorithm",
+  //   "front",
+  //   "html",
+  //   ".js"
+  // ];
   const [carts, setCarts] = useState([
     false,
     false,
@@ -75,6 +77,8 @@ function App() {
         <span>SELECTED PROJECTS</span>
         <div onClick={pickAWord}>
           {/* <Reload /> */}
+          <img src={click} alt="clic" />
+          {/* <span>tryme</span> */}
           <img src={dice} alt="dice" />
         </div>
       </div>
@@ -83,7 +87,6 @@ function App() {
         className="gridprojects"
         onClick={event => {
           event.stopPropagation();
-          // setModaleNum(null);
         }}
       >
         {/* MODAL TO WATCH ONE */}
