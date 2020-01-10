@@ -43,9 +43,9 @@ const obj2 = {
   title: "My other life",
   gif: cycling_Gif,
   img: cycling_Img,
-  description: `When I'm not coding, you might see Ableton Live open on my mac, and if not behind my computer you might see me cycling on a lost road.
+  description: `When I'm not coding, you might see a music production software open on my Mac, and if not behind a computer you might see me cycling on a lost road.
     \n>Travels
-    \nIn 2012 I discovered the world on a 16.000km bicycle journey from Paris to Australia. I kept going later with two other travels on two wheels in Morocco and South America. 
+    \nIn 2012 I discovered the world on a 16.000km bicycle journey from Paris to Australia. I kept going later with two other travels on two wheels. Where should I go next ?
     \n>Music
     I am a pianist, guitarist and I compose atmospheric electronic music, and I enjoy teaching any of this to beginners.
     `,
@@ -68,12 +68,11 @@ const obj4 = {
   title: "MeilleurTaux.com",
   gif: MT_Gif,
   img: MT_Img,
-  description: `This is a fullstack simplified version of www.meilleurtaux.com, a french website that gives you quotes for loans.
-A cookie and a React state help you save the datas you entered even if you close the tab. You will automatically come back to where you left the form.
-
+  description: `This is a fullstack simplified version of www.meilleurtaux.com, a french website that gives quotes for loans.
+A cookie saves all the datas entered in the forms after you close the tab. Re-opening it will take you back were you left the form.
 I added a few sounds for the fun, and a back-office with a very ... "modern" design with a random color generator ;)
-The percentage bar and its turning wheel are CSS home made !
-    \n>stack
+The percentage bar and turning wheel are CSS home made.
+    \n>Stack
     \nFrontend: React, CSS, Axios, the Vipoco API is used to propose ZipCodes
     \nBackend: Node.js, express, mongoDB, MailGun
     `,
@@ -87,9 +86,9 @@ const obj5 = {
   title: "Giant Tic Tak Toe",
   gif: TTT_Gif,
   img: TTT_Img,
-  description: `When I was bored in a classroom in highschool, I used to take a blank graph paper out of my bag, cross a first square, pass it to my neighbour and this was the beginning of long game of tic tac toe with no boundaries ! Any line of 4 X's or O's was worth one point.
+  description: `When I was bored in a classroom in highschool, I used to take a blank graph paper out of my bag, cross a square, pass it to my neighbour and this was the beginning of long Tic Tac Toe with no boundaries ! Any line of 4 X's or O's was worth one point.
     \n Here is the modern desktop version of it ! Enter a username and challenge anybody who is connected
-    \n>stack
+    \n>Stack
     \nFrontend: Node.js, React, CSS, Axios, 
     \nBackend: Node.js, express, websocket,
     \n>Next steps
@@ -105,14 +104,12 @@ const obj6 = {
   title: "Leboncoin.com",
   gif: leboncoin_Gif,
   img: leboncoin_Img,
-  description: `This is a demo copy of french CraigList. Feel free to SignUp and post your own fake products.
-\n>features:
+  description: `This is a simplified copy of the french Craigslist. Feel free to sign up and post your own fake products.
+\n>Features:
 \nConsult posts, filter by name, secure signup, secure login, create a post, upload multiple photos
-\n>stack:
-Front end is made with React. After you authentify, a Cookie will save the infos so you don't need to authent again
-The BackEnd is made with javascript / express
-The authentification is made with a salt/hash algorithm
-The photos are hosted on Cloudinary service`,
+\n>Stack:
+Front-end: React, js-cookie
+Back-end: Node.js, Express, Salt/Hash, Cloudinary`,
   link1: "https://leboncoinfullstack.netlify.com/",
   button1: "Check it out live",
   link2: "https://leboncoinfullstack.netlify.com/",
@@ -121,38 +118,37 @@ The photos are hosted on Cloudinary service`,
 /* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
 const obj7 = {
   title: "Le Franc Manger",
-  description: `This MVP was made for a parisian startup whose goal is to bring closer consumers and local farmers.
-    \n>features
-    The map is centered on the user localisation and shows all producers 30km around. You can filter the producers by type of products.
-    \n>stack
-    \nFrontend: ReactNative, geolocalisation,
+  description: `We developed this MVP for a parisian start-up whose goal is to bring closer consumers and local farmers.
+    \n>Features
+    The map shows all producers 30km around. You can filter the producers by type of products. 
+    \n>Stack
+    \nFrontend: ReactNative, Geolocalisation,
     \nBackend: Node.js, express, mongoDB, Cloudinary`,
   gif: francmanger_Img,
   img: francmanger_Gif
 };
 /* # # # # # # AirBnB # # # # # # # # # # # # # # # */
 const obj8 = {
-  title: "Airbnb s",
+  title: "Airbnb's",
   gif: airbnb_Img,
   img: airbnb_Gif,
   description: `This is a simplified version of the Airbnb app
-    \n>features
-    login, signup with profile photo upload, consultation of the places around, map view. 
-    \n>stack
-    \n Made with React Native`,
+    \n>Features
+    login, sign-up, upload a profile photo, consult the places around, map view. 
+    \n>Stack
+    \nReact Native`,
   link2: "https://github.com/MgRl8ow3MhVr/airbnbReactNative",
   button2: "Github repo"
 };
 /* # # # # # # THIS WEBSITE # # # # # # # # # # # # # # # */
 const obj9 = {
-  title: "this.website d",
+  title: "this.webdsite",
   description:
-    "I hope you enjoyed this website experience ! It was home made with react/html/css",
+    "I hope you enjoyed this website experience, it was home made with react/html/css",
   gif: thiswebsite_Gif,
   img: thiswebsite_Img,
-  // img: demo_mp4_cloud,
-  link2: "https://pierredev.netlify.com/",
-  button2: "recursive visit",
+  link1: "https://pierredev.netlify.com/",
+  button1: "visit recursively",
   link2: "https://github.com/MgRl8ow3MhVr/portfolio",
   button2: "Github repo"
 };

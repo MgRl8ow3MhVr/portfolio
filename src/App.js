@@ -10,17 +10,30 @@ import click from "./assets/click.png";
 
 function App() {
   // const wordsList = ["back", ".js", "r.native"", "front","express"];
-  const wordsList = ["frontend", "mongo.db", "express", "algorithm"];
   // const wordsList = [
-  //   "malleret",
-  //   "pierre",
-  //   "fullstack",
-  //   "react",
+  //   "frontend",
+  //   "mongo.db",
+  //   "express",
   //   "algorithm",
-  //   "front",
-  //   "html",
-  //   ".js"
+  //   "git",
+  //   "github"
   // ];
+  const wordsList = [
+    "fullstack",
+    "malleret",
+    "react",
+    "algorithm",
+    "pierre",
+    "frontend",
+    "html",
+    "node.js",
+    "backend",
+    "mongo.db",
+    "express",
+    "algorithm",
+    "git",
+    "github"
+  ];
   const [carts, setCarts] = useState([
     false,
     false,

@@ -56,26 +56,25 @@ body {
   background-color: #d8b4a0;
 }
 
+/* CLICK ME */
+
 .subtitle img:nth-child(1) {
   position: absolute;
   z-index: 10;
   margin: 10px 0 10px 0;
-  width: 50px;
-  top: -7px;
-  right: -4px;
+  width: 135px;
+  top: -14px;
+  right: -50px;
   transition: all 0.1s;
   animation: turn 2s infinite ease;
 }
+/* LE Dé */
 
 .subtitle img:nth-child(2) {
   margin: 10px 0 10px 0;
-  width: 40px;
+  width: 47px;
   transition: all 0.1s;
-  border-radius: 20px;
   animation: turn 2s infinite ease;
-  border: solid 1px;
-
-  /* box-shadow: 7px 10px 9px -6px rgba(0, 0, 0, 0.75); */
 }
 .subtitle img:active {
   transform: scale(0.9);
@@ -89,7 +88,7 @@ body {
 .subtitle svg:hover {
   /* transform: rotate(360deg); */
   cursor: pointer;
-  animation: turn 3s infinite ease;
+  animation: turn 6s infinite ease;
 }
 .subtitle svg:active {
   transform: scale(0.8);
@@ -280,7 +279,7 @@ body {
   opacity: 0.8;
   padding: 5px 20px 0px 20px;
   margin-top: 89%;
-  max-height: calc(100% - 5px);
+  -height: calc(100% - 5pmaxx);
   min-height: 40%;
   display: flex;
   flex-direction: column;
@@ -324,6 +323,7 @@ h2 {
   opacity: 1;
   font-weight: bold;
   margin: 10px;
+  font-size: 18px;
 }
 
 .description a:hover {
@@ -360,6 +360,7 @@ h2 {
     letter-spacing: 8px;
     font-size: 15px;
   }
+  /* TITELS */
 
   .t1 {
     font-size: 50px;
@@ -379,5 +380,44 @@ h2 {
   }
   .t2h {
     font-size: 13px;
+  }
+
+  /* DESCRIPTION */
+  .description p {
+    font-size: 13px;
+    color: white;
+  }
+  .description > div {
+    height: auto;
+  }
+  .description a {
+    background-color: #d8b4a0;
+    border-radius: 3px;
+    margin-top: 0px;
+    padding: 5px 20px 5px 20px;
+    opacity: 1;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  /* DE ET CLICK ME */
+  .subtitle img:nth-child(1) {
+    position: absolute;
+    z-index: 10;
+    margin: 10px 0 10px 0;
+    width: 80px;
+    top: -9px;
+    right: -28px;
+    transition: all 0.1s;
+    animation: turn 2s infinite ease;
+  }
+  /* LE Dé */
+
+  .subtitle img:nth-child(2) {
+    margin: 10px 0 10px 0;
+    width: 30px;
+    transition: all 0.1s;
+    animation: turn 2s infinite ease;
   }
 }
