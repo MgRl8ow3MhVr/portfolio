@@ -274,12 +274,11 @@ body {
 /* Actual text whith huge margin Top */
 .description > div {
   position: relative;
-  /* background-color: rgb(228, 228, 228); */
   background-color: #000000;
   opacity: 0.8;
   padding: 5px 20px 0px 20px;
   margin-top: 89%;
-  -height: calc(100% - 5pmaxx);
+  height: calc(100% - 5px);
   min-height: 40%;
   display: flex;
   flex-direction: column;
