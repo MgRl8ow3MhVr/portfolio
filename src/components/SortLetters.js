@@ -47,7 +47,7 @@ const sortProjects = (word, listProjects) => {
     // tab.unshift(tab.pop());
     shuffleArray(tab)
     currResult = findaword(word, tab)
-    console.log(currResult)
+    // console.log(currResult)
   }
 
   //ici on n'a pas trouvé de combinaison

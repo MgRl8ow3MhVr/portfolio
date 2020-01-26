@@ -335,8 +335,11 @@ body {
   align-items: center;
 }
 /* Rotate up the top >> */
-.description svg {
+.chevron {
   transform: rotate(-90deg);
+}
+.chevronDown {
+  transform: rotate(90deg);
 }
 
 /* Writting inside description */

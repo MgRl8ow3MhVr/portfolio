@@ -1,22 +1,21 @@
-import React, { useEffect } from "react";
-import Fade from "./Fade.js";
+import React, { useEffect } from 'react'
+import Fade from './Fade.js'
 
-function Project({
+function Project ({
   gif,
   show,
   setCarts,
   title,
   color,
   bigletter,
-  setModaleNum,
-  index
+  openModale
 }) {
   useEffect(() => {
-    const img = document.createElement("img");
-    img.src = gif;
-  }, []);
+    const img = document.createElement('img')
+    img.src = gif
+  }, [])
 
-  const pos = bigletter !== undefined ? bigletter : -1;
+  const pos = bigletter !== undefined ? bigletter : -1
   const emptyBoard = [
     false,
     false,
@@ -27,35 +26,35 @@ function Project({
     false,
     false,
     false
-  ];
+  ]
   return (
     <div
-      className="cart"
+      className='cart'
       onMouseEnter={() => {
-        setCarts();
+        setCarts()
       }}
       onMouseLeave={() => {
-        setCarts(emptyBoard);
+        setCarts(emptyBoard)
       }}
       style={color && { backgroundColor: color }}
     >
-      <div className={show ? "titlesin" : "titlesout"}>
-        <div className={show ? "t2h" : "t2"}>{title.substring(0, pos)}</div>
-        <div className={show ? "t1h" : "t1"}>{title.charAt(pos)}</div>
-        <div className={show ? "t2h" : "t2"}>{title.substring(pos + 1)}</div>
+      <div className={show ? 'titlesin' : 'titlesout'}>
+        <div className={show ? 't2h' : 't2'}>{title.substring(0, pos)}</div>
+        <div className={show ? 't1h' : 't1'}>{title.charAt(pos)}</div>
+        <div className={show ? 't2h' : 't2'}>{title.substring(pos + 1)}</div>
       </div>
 
       <Fade show={show}>
         <img
           src={gif}
-          alt="gif"
+          alt='gif'
           onClick={() => {
-            setModaleNum(index);
+            openModale()
           }}
         />
       </Fade>
     </div>
-  );
+  )
 }
 
-export default Project;
+export default Project

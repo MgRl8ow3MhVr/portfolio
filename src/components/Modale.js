@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './Button'
 import Description from './Description'
 
 const Modale = ({ project }) => {
+  //Detect when top of Scroll then change chevrons direction
+  const el = document.querySelector('.description')
+  if (el) {
+    el.addEventListener('scroll', () => {
+      if (el.scrollTop > 470) {
+        console.log('HEY')
+        document.querySelector('.chevron').classList.add('chevronDown')
+      } else {
+        document.querySelector('.chevron').classList.remove('chevronDown')
+      }
+    })
+  }
+
   return (
     <div className='modale'>
       {/* this div to set a background gradient */}
@@ -10,7 +23,7 @@ const Modale = ({ project }) => {
       <div className='description'>
         <div>
           <span>Scroll</span>
-          <Button />
+          <Button className='chevron' />
           <div>
             <Description text={project.description} />
           </div>

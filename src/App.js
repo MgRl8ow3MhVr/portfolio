@@ -87,6 +87,14 @@ function App () {
     }
   }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('LOADED')
+  })
+
+  // document.addEventListener('scroll', () => {
+  //   const pixels = window.pageYOffset
+  //   console.log(`distance du scroll: ${pixels} px`)
+  // })
   /* # # # # # # APP # # # # # # # # # # # # # # # # # # # # # # # # # # */
   return (
     <div
@@ -130,10 +138,10 @@ function App () {
           {prevProjList.map((projet, index) => {
             //Search position of the current project in the new Array Projectlist and set it to the class.
             const pos = search(projet.id)
+            const currProj = prevProjList[pos]
             return (
-              <div className={'project projectPos' + pos}>
+              <div key={index} className={'project projectPos' + pos}>
                 <Project
-                  key={projet.id}
                   gif={projet.gif}
                   description={projet.description}
                   title={projet.title}
@@ -144,8 +152,9 @@ function App () {
                     setACart(index)
                   }}
                   bigletter={projet.bigletter}
-                  setModaleNum={setModaleNum}
-                  index={index}
+                  openModale={() => {
+                    setModaleNum(pos)
+                  }}
                 />
               </div>
             )
