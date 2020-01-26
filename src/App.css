@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   text-decoration: none;
   color: black;
 }
@@ -108,13 +108,63 @@ body {
   }
 }
 
-/* Line of 3 */
+body {
+  --sizeProject: 180px;
+  --transTime: 1s;
+}
 .projectscontenair {
-  display: flex;
-  justify-content: center;
+  width: calc((var(--sizeProject) * 3 - 5px));
+  height: calc((var(--sizeProject) * 3 - 5px));
+  /* border: solid red; */
 }
 
 /* # # # # # # # # # CART # # # # # # # # #  */
+
+.project {
+  position: absolute;
+  transition: all var(--transTime) ease;
+  z-index: 0;
+}
+
+.projectPos0 {
+  transform: translate(0, 0);
+}
+.projectPos1 {
+  transform: translate(calc(var(--sizeProject) * 1), 0);
+}
+.projectPos2 {
+  transform: translate(calc(var(--sizeProject) * 2), 0);
+}
+.projectPos3 {
+  transform: translate(0, calc(var(--sizeProject) * 1));
+}
+.projectPos4 {
+  transform: translate(
+    calc(var(--sizeProject) * 1),
+    calc(var(--sizeProject) * 1)
+  );
+}
+.projectPos5 {
+  transform: translate(
+    calc(var(--sizeProject) * 2),
+    calc(var(--sizeProject) * 1)
+  );
+}
+.projectPos6 {
+  transform: translate(0, calc(var(--sizeProject) * 2));
+}
+.projectPos7 {
+  transform: translate(
+    calc(var(--sizeProject) * 1),
+    calc(var(--sizeProject) * 2)
+  );
+}
+.projectPos8 {
+  transform: translate(
+    calc(var(--sizeProject) * 2),
+    calc(var(--sizeProject) * 2)
+  );
+}
 
 .cart {
   /* flexand pos */
@@ -128,7 +178,7 @@ body {
 
   /* background-color: #303030; */
   background-color: #303030;
-  margin: 3px;
+  /* margin: 3px; */
   overflow: hidden;
 }
 .cart:hover {
@@ -176,7 +226,7 @@ body {
   font-weight: bold;
 }
 .t1h {
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
 
   color: white;
   transition: all 0.3s ease;
@@ -185,7 +235,7 @@ body {
   /* font-weight: bold; */
 }
 .t2h {
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   color: white;
   font-size: 20px;
   transition: all 0.3s linear;
@@ -291,7 +341,7 @@ body {
 
 /* Writting inside description */
 .description p {
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
 
   /* text-align: justify; */
   margin-bottom: 12px;
@@ -347,6 +397,9 @@ h2 {
     height: 110px;
     width: 110px;
   }
+  body {
+    --sizeProject: 115px;
+  }
 
   .header {
     font-size: 30px;
@@ -355,11 +408,9 @@ h2 {
   }
 
   .subtitle > span {
-    /* background-color: red; */
     letter-spacing: 8px;
     font-size: 15px;
   }
-  /* TITELS */
 
   .t1 {
     font-size: 50px;

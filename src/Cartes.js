@@ -21,7 +21,8 @@ import francmanger_Gif from "./assets/francmanger.gif";
 import airbnb_Gif from "./assets/airbnb.gif";
 
 /* # # # # # # ABOUT ME # # # # # # # # # # # # # # # */
-const obj1 = {
+const obj0 = {
+  id: 0,
   title: "About Me",
   gif: cv_Gif,
   img: cv_Img,
@@ -38,8 +39,8 @@ const obj1 = {
   link2: "https://github.com/MgRl8ow3MhVr"
 };
 /* # # # # # # CYCLING AROUND # # # # # # # # # # # # # # # */
-const obj2 = {
-  // title: "When I don't code",
+const obj1 = {
+  id: 1,
   title: "My other life",
   gif: cycling_Gif,
   img: cycling_Img,
@@ -56,7 +57,8 @@ const obj2 = {
 };
 
 /* # # # # # # YOUR PROJECT # # # # # # # # # # # # # # # */
-const obj3 = {
+const obj2 = {
+  id: 2,
   title: "Your project !",
   gif: question_Gif,
   img: question_Gif,
@@ -64,7 +66,8 @@ const obj3 = {
     `
 };
 /* # # # # # # MEILLEUR TAUX # # # # # # # # # # # # # # # */
-const obj4 = {
+const obj3 = {
+  id: 3,
   title: "MeilleurTaux.com",
   gif: MT_Gif,
   img: MT_Img,
@@ -82,7 +85,8 @@ The percentage bar and turning wheel are CSS home made.
   link2: "https://github.com/MgRl8ow3MhVr/meilleurtaux"
 };
 /* # # # # # # TICTACTOE # # # # # # # # # # # # # # # */
-const obj5 = {
+const obj4 = {
+  id: 4,
   title: "Giant Tic Tak Toe",
   gif: TTT_Gif,
   img: TTT_Img,
@@ -100,7 +104,8 @@ const obj5 = {
   link2: "https://github.com/MgRl8ow3MhVr/x_tictactoe"
 };
 /* # # # # # # LEBONCOIN # # # # # # # # # # # # # # # */
-const obj6 = {
+const obj5 = {
+  id: 5,
   title: "Leboncoin.com",
   gif: leboncoin_Gif,
   img: leboncoin_Img,
@@ -116,7 +121,8 @@ Back-end: Node.js, Express, Salt/Hash, Cloudinary`,
   button2: "Github repo"
 };
 /* # # # # # # FRANC MANGER # # # # # # # # # # # # # # # */
-const obj7 = {
+const obj6 = {
+  id: 6,
   title: "Le Franc Manger",
   description: `We developed this MVP for a parisian start-up whose goal is to bring closer consumers and local farmers.
     \n>Features
@@ -128,7 +134,8 @@ const obj7 = {
   img: francmanger_Gif
 };
 /* # # # # # # AirBnB # # # # # # # # # # # # # # # */
-const obj8 = {
+const obj7 = {
+  id: 7,
   title: "Airbnb's",
   gif: airbnb_Img,
   img: airbnb_Gif,
@@ -141,7 +148,8 @@ const obj8 = {
   button2: "Github repo"
 };
 /* # # # # # # THIS WEBSITE # # # # # # # # # # # # # # # */
-const obj9 = {
+const obj8 = {
+  id: 8,
   title: "this.webdsite",
   description:
     "I hope you enjoyed this website experience, it was home made with react/html/css",
@@ -153,4 +161,4 @@ const obj9 = {
   button2: "Github repo"
 };
 
-export default [obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9];
+export default [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8];
