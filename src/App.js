@@ -4,7 +4,7 @@ import './App.css'
 import Project from './components/Project.js'
 import cartes from './Cartes.js'
 import sortProjects from './components/SortLetters.js'
-import Reload from './components/Reload'
+// import Reload from './components/Reload'
 import Modale from './components/Modale'
 import dice from './assets/dice.png'
 import click from './assets/click.png'
@@ -39,6 +39,7 @@ function App () {
   ])
   const [classChange, setClassChange] = useState(true)
   const [wordNum, setWordNum] = useState(-1)
+  const [justLanded, setJustLanded] = useState(true)
   const [projetsList, setProjectList] = useState(cartes)
   const [prevProjList, setPrevProjList] = useState(cartes)
   const [modaleNum, setModaleNum] = useState(null)
@@ -64,6 +65,9 @@ function App () {
   //and use it with first word of the list at landing
   useEffect(() => {
     pickAWord(wordNum)
+    setTimeout(() => {
+      setJustLanded(false)
+    }, 200)
   }, [])
 
   //open one card. set all other card state to false
@@ -108,12 +112,7 @@ function App () {
         <span>SELECTED PROJECTS</span>
         <div
           onClick={() => {
-            // setClassChange(false)
-
             pickAWord()
-            // setTimeout(() => {
-            //   setClassChange(true)
-            // }, 2400)
           }}
         >
           {/* <Reload /> */}
@@ -140,7 +139,14 @@ function App () {
             const pos = search(projet.id)
             const currProj = prevProjList[pos]
             return (
-              <div key={index} className={'project projectPos' + pos}>
+              <div
+                key={index}
+                className={
+                  !justLanded
+                    ? 'project projectPos' + pos
+                    : 'project projectPos1'
+                }
+              >
                 <Project
                   gif={projet.gif}
                   description={projet.description}
